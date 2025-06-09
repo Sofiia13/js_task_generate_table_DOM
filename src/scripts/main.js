@@ -359,6 +359,12 @@ console.log(people); // you can remove it
 
 const table = document.querySelector('table');
 
+let tbody = table.querySelector('tbody');
+if (!tbody) {
+  tbody = document.createElement('tbody');
+  table.appendChild(tbody);
+}
+
 for (let i = 0; i < people.length; i++) {
   const person = people[i];
 
@@ -398,5 +404,5 @@ for (let i = 0; i < people.length; i++) {
   centuryCell.textContent = Math.ceil(person.died / 100);
   row.appendChild(centuryCell);
 
-  table.appendChild(row);
+  tbody.appendChild(row);
 }
